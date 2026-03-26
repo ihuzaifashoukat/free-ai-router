@@ -1,0 +1,63 @@
+{
+  "name": "free-ai-router",
+  "version": "0.1.0",
+  "description": "Zero-cost multi-provider AI router with OpenAI SDK compatibility. Automatically discovers and routes to the best free AI models across NVIDIA, Groq, Cerebras, OpenRouter, and more.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "ai",
+    "openai",
+    "free",
+    "router",
+    "llm",
+    "groq",
+    "nvidia",
+    "cerebras",
+    "openrouter",
+    "multi-provider",
+    "ai-gateway",
+    "free-ai"
+  ],
+  "author": "Huzaifa Shoukat",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@vitest/coverage-v8": "^3.2.4",
+    "tsup": "^8.0.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  }
+}
